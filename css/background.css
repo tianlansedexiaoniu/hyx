@@ -1,3 +1,3 @@
 html,body{height:100%;margin:0}body{background:url(../img/star.webp)center/cover no-repeat}
 #text{position:absolute;left:0;right:0;bottom:0;margin:0 auto;text-align:center;color:#fff}a{text-decoration:none}
-.b{background:rgba(255,255,255,.20);}
+.b{border:0;background:rgba(255,255,255,.20);}
