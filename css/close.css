@@ -1,2 +1,4 @@
 a{text-decoration:none;}
-.x{width:32px;height:32px;padding:0;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:24px}.x:hover{background:#f44;color:#fff}hr{border:1 double #000;width:100%;color:#000;size:2}
+.x{width:32px;height:32px;padding:0;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:24px;color:#000;}
+.x:hover{background:#f44;color:#fff;}
+hr{border:1 double #000;width:100%;color:#000;size:2;}
