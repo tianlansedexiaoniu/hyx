@@ -1,35 +1,52 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
 <meta charset="utf-8">
 <title>何昱轩个人站</title>
 <link rel="icon" href="img/hyx.ico" type="image/x-icon">
 <link rel="stylesheet" href="css/background.css">
 <style>
-body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.4) 0px,rgba(0,0,0,0.4) 4px,transparent 4px,transparent 8px);pointer-events:none;z-index:9999;animation:flicker 0.15s infinite;}
-@keyframes flicker{0%{opacity:0.97;}50%{opacity:1;}100%{opacity:0.98;}}
-img{border:6px solid #40A0A8;}
+body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.4) 4px,transparent 4px,transparent 8px);pointer-events:none;z-index:9999;animation:flicker .15s infinite;}
+@keyframes flicker{0%{opacity:.97}50%{opacity:1}100%{opacity:.98}}
+img{border:6px solid #40A0A8}
+#footer,#text{position:fixed;left:0;width:100%;text-align:center;margin:0}
+#footer{bottom:20px;font-size:50px;color:white}
 </style>
 </head>
 <body>
 <a href="index.html"><button class="b"><font size=6 color=white>主页</font></button></a>
 <a href="download.html"><button class="b"><font size=6 color=white>下载</font></button></a>
 <a href="about.html"><button class="b"><font size=6 color=white>介绍</font></button></a>
-<div align="center">
-<table>
+<table align="center">
 <tr>
 <td><h1 style="color:#46A3FF;font-size:50px">何昱轩科技有限公司</h1></td>
 <td><img src="img/hyx.ico" width="64" height="64"></td>
 </tr>
 </table>
-</div>
 <h1 align="center"><a href="index.html" style="color:#40A0A8;text-decoration:none">后人哀之而不鉴之，亦使后人而复哀后人也。</a></h1>
-<table width="100%">
-<tr><td align="left"><img src="egg/iPadPro9.7.jpg" width="200" height="200"></td><td align="center"><img src="egg/dellxps9380.jpg" width="200" height="200"></td><td align="right"><img src="egg/Asusold.jpg" width="200" height="200"></td></tr>
-<tr><td align="left"><img src="egg/xunfeit10.jpg" width="200" height="200"></td><td align="center"><img src="egg/xiaoailaoshi.jpg" width="200" height="200"></td><td align="right"><img src="egg/mimax2.jpg" width="200" height="200"></td></tr>
-<tr><td align="left"><img src="egg/thinkpad.jpg" width="200" height="200"></td><td align="center"><img src="egg/madpaper.jpg" width="200" height="200"></td><td align="right"><img src="egg/mi15.jpg" width="200" height="200"></td></tr>
-<tr><td align="left"><img src="egg/cdwatch.jpg" width="200" height="200"></td><td align="center"><h1 style="color:white;font-size:50px">感谢你们的奉献与牺牲</h1></td><td align="right"></td></tr>
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td align="left"><img src="egg/iPadPro9.7.jpg" width="250" height="190"></td>
+<td align="center"><img src="egg/newasus.jpg" width="250" height="190"></td>
+<td align="right"><img src="egg/dellxps9380.jpg" width="250" height="190"></td>
+</tr>
+<tr>
+<td align="left"><img src="egg/Asusold.jpg" width="250" height="190"></td>
+<td align="center"><img src="egg/xunfeit10.jpg" width="250" height="190"></td>
+<td align="right"><img src="egg/xiaoailaoshi.jpg" width="250" height="190"></td>
+</tr>
+<tr>
+<td align="left"><img src="egg/mimax2.jpg" width="250" height="190"></td>
+<td align="center"><img src="egg/thinkpad.jpg" width="250" height="190"></td>
+<td align="right"><img src="egg/madpaper.jpg" width="250" height="190"></td>
+</tr>
+<tr>
+<td align="left"><img src="egg/mi15.jpg" width="250" height="190"></td>
+<td align="center"><img src="egg/cdwatch.jpg" width="250" height="190"></td>
+<td align="right"></td>
+</tr>
 </table>
+<h1 id="footer">感谢你们的奉献与牺牲</h1>
 <div id="text"><font size="1" color=white>何昱轩科技有限公司(He Yuxuan Technology Co.,Ltd.) 2021~2022 2025~2026</font></div>
 </body>
 </html>
