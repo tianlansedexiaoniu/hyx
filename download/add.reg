@@ -3,142 +3,217 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\cmd.exe]
 "URL Protocol"=""
 [HKEY_CLASSES_ROOT\cmd.exe\shell\open\command]
-@="cmd.exe /k"
-
-[HKEY_CLASSES_ROOT\regedit.exe]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\regedit.exe\shell\open\command]
-@="regedit.exe"
-
-[HKEY_CLASSES_ROOT\taskmgr.exe]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\taskmgr.exe\shell\open\command]
-@="taskmgr.exe"
-
-[HKEY_CLASSES_ROOT\explorer.exe]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\explorer.exe\shell\open\command]
-@="explorer.exe"
-
-[HKEY_CLASSES_ROOT\compmgmt.msc]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\compmgmt.msc\shell\open\command]
-@="mmc.exe compmgmt.msc"
-
-[HKEY_CLASSES_ROOT\notepad]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\notepad\shell\open\command]
-@="notepad.exe"
-
-[HKEY_CLASSES_ROOT\iscsicpl.exe]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\iscsicpl.exe\shell\open\command]
-@="%windir%\\system32\\iscsicpl.exe"
-
-[HKEY_CLASSES_ROOT\write]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\write\shell\open\command]
-@="write.exe"
-
-[HKEY_CLASSES_ROOT\odbcad32.exe]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\odbcad32.exe\shell\open\command]
-@="%windir%\\syswow64\\odbcad32.exe"
-
-[HKEY_CLASSES_ROOT\mstsc]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\mstsc\shell\open\command]
-@="mstsc.exe"
-
-[HKEY_CLASSES_ROOT\cleanmgr]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\cleanmgr\shell\open\command]
-@="cleanmgr.exe"
-
-[HKEY_CLASSES_ROOT\services.msc]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\services.msc\shell\open\command]
-@="mmc.exe services.msc"
-
-[HKEY_CLASSES_ROOT\WF.msc]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\WF.msc\shell\open\command]
-@="mmc.exe %windir%\\system32\\WF.msc"
-
-[HKEY_CLASSES_ROOT\calc]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\calc\shell\open\command]
-@="calc.exe"
-
-[HKEY_CLASSES_ROOT\msinfo32]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\msinfo32\shell\open\command]
-@="msinfo32.exe"
-
-[HKEY_CLASSES_ROOT\gpedit.msc]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\gpedit.msc\shell\open\command]
-@="mmc.exe gpedit.msc"
-
-[HKEY_CLASSES_ROOT\perfmon]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\perfmon\shell\open\command]
-@="perfmon.exe"
-
-[HKEY_CLASSES_ROOT\resmon]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\resmon\shell\open\command]
-@="resmon.exe"
-
-[HKEY_CLASSES_ROOT\control]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\control\shell\open\command]
-@="control.exe"
-
-[HKEY_CLASSES_ROOT\mspaint]
-"URL Protocol"=""
-[HKEY_CLASSES_ROOT\mspaint\shell\open\command]
-@="mspaint.exe"
+@="cmd.exe /c start \"\" cmd.exe /k & rem"
 
 [HKEY_CLASSES_ROOT\powershell]
 "URL Protocol"=""
 [HKEY_CLASSES_ROOT\powershell\shell\open\command]
-@="powershell.exe -NoExit"
+@="cmd.exe /c start \"\" powershell.exe -NoExit & rem"
 
 [HKEY_CLASSES_ROOT\powershell_ise]
 "URL Protocol"=""
 [HKEY_CLASSES_ROOT\powershell_ise\shell\open\command]
-@="powershell_ise.exe"
+@="cmd.exe /c start \"\" powershell_ise.exe & rem"
+
+[HKEY_CLASSES_ROOT\regedit.exe]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\regedit.exe\shell\open\command]
+@="cmd.exe /c start \"\" regedit.exe & rem"
+
+[HKEY_CLASSES_ROOT\taskmgr.exe]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\taskmgr.exe\shell\open\command]
+@="cmd.exe /c start \"\" taskmgr.exe & rem"
+
+[HKEY_CLASSES_ROOT\explorer.exe]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\explorer.exe\shell\open\command]
+@="cmd.exe /c start \"\" explorer.exe & rem"
+
+[HKEY_CLASSES_ROOT\compmgmt.msc]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\compmgmt.msc\shell\open\command]
+@="cmd.exe /c start \"\" mmc.exe compmgmt.msc & rem"
+
+[HKEY_CLASSES_ROOT\services.msc]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\services.msc\shell\open\command]
+@="cmd.exe /c start \"\" mmc.exe services.msc & rem"
+
+[HKEY_CLASSES_ROOT\WF.msc]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\WF.msc\shell\open\command]
+@="cmd.exe /c start \"\" mmc.exe %windir%\\system32\\WF.msc & rem"
+
+[HKEY_CLASSES_ROOT\gpedit.msc]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\gpedit.msc\shell\open\command]
+@="cmd.exe /c start \"\" mmc.exe gpedit.msc & rem"
+
+[HKEY_CLASSES_ROOT\control]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\control\shell\open\command]
+@="cmd.exe /c start \"\" control.exe & rem"
+
+[HKEY_CLASSES_ROOT\msinfo32]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\msinfo32\shell\open\command]
+@="cmd.exe /c start \"\" msinfo32.exe & rem"
+
+[HKEY_CLASSES_ROOT\perfmon]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\perfmon\shell\open\command]
+@="cmd.exe /c start \"\" perfmon.exe & rem"
+
+[HKEY_CLASSES_ROOT\resmon]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\resmon\shell\open\command]
+@="cmd.exe /c start \"\" resmon.exe & rem"
+
+[HKEY_CLASSES_ROOT\cleanmgr]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\cleanmgr\shell\open\command]
+@="cmd.exe /c start \"\" cleanmgr.exe & rem"
+
+[HKEY_CLASSES_ROOT\notepad]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\notepad\shell\open\command]
+@="cmd.exe /c start \"\" notepad.exe & rem"
+
+[HKEY_CLASSES_ROOT\write]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\write\shell\open\command]
+@="cmd.exe /c start \"\" write.exe & rem"
+
+[HKEY_CLASSES_ROOT\mspaint]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\mspaint\shell\open\command]
+@="cmd.exe /c start \"\" mspaint.exe & rem"
+
+[HKEY_CLASSES_ROOT\calc]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\calc\shell\open\command]
+@="cmd.exe /c start \"\" calc.exe & rem"
+
+[HKEY_CLASSES_ROOT\mstsc]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\mstsc\shell\open\command]
+@="cmd.exe /c start \"\" mstsc.exe & rem"
+
+[HKEY_CLASSES_ROOT\iscsicpl.exe]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\iscsicpl.exe\shell\open\command]
+@="cmd.exe /c start \"\" %windir%\\system32\\iscsicpl.exe & rem"
+
+[HKEY_CLASSES_ROOT\odbcad32.exe]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\odbcad32.exe\shell\open\command]
+@="cmd.exe /c start \"\" %windir%\\syswow64\\odbcad32.exe & rem"
 
 [HKEY_CLASSES_ROOT\msedge]
 "URL Protocol"=""
 [HKEY_CLASSES_ROOT\msedge\shell\open\command]
-@="msedge.exe"
+@="cmd.exe /c start \"\" msedge.exe & rem"
 
-[HKEY_CLASSES_ROOT\shutdown_s]
+[HKEY_CLASSES_ROOT\1]
 "URL Protocol"=""
-[HKEY_CLASSES_ROOT\shutdown_s\shell\open\command]
-@="shutdown.exe -s -t 0"
+[HKEY_CLASSES_ROOT\1\shell\open\command]
+@="cmd.exe /c shutdown.exe /f /s /t 0 & rem"
 
-[HKEY_CLASSES_ROOT\shutdown_r]
+[HKEY_CLASSES_ROOT\2]
 "URL Protocol"=""
-[HKEY_CLASSES_ROOT\shutdown_r\shell\open\command]
-@="shutdown.exe -r -t 0"
+[HKEY_CLASSES_ROOT\2\shell\open\command]
+@="cmd.exe /c shutdown.exe /f /r /t 0 & rem"
 
-[HKEY_CLASSES_ROOT\sleep]
+[HKEY_CLASSES_ROOT\3]
 "URL Protocol"=""
-[HKEY_CLASSES_ROOT\sleep\shell\open\command]
-@="rundll32.exe powrprof.dll,SetSuspendState 0,1,0"
+[HKEY_CLASSES_ROOT\3\shell\open\command]
+@="cmd.exe /c shutdown.exe /f /l & rem"
 
-[HKEY_CLASSES_ROOT\shutdown_l]
+[HKEY_CLASSES_ROOT\4]
 "URL Protocol"=""
-[HKEY_CLASSES_ROOT\shutdown_l\shell\open\command]
-@="shutdown.exe -l"
+[HKEY_CLASSES_ROOT\4\shell\open\command]
+@="cmd.exe /c rundll32.exe powrprof.dll,SetSuspendState 0,1,0 & rem"
 
-[HKEY_CLASSES_ROOT\restart_explorer]
+[HKEY_CLASSES_ROOT\5]
 "URL Protocol"=""
-[HKEY_CLASSES_ROOT\restart_explorer\shell\open\command]
-@="cmd.exe /c taskkill /f /im explorer.exe && start explorer.exe"
+[HKEY_CLASSES_ROOT\5\shell\open\command]
+@="cmd.exe /k set /p t=请输入关机秒数: & shutdown /s /t %t% & rem"
+
+[HKEY_CLASSES_ROOT\6]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\6\shell\open\command]
+@="cmd.exe /k set /p t=请输入重启秒数: & shutdown /r /t %t% & rem"
+
+[HKEY_CLASSES_ROOT\7]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\7\shell\open\command]
+@="cmd.exe /c shutdown.exe /r /fw /t 0 & rem"
+
+[HKEY_CLASSES_ROOT\8]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\8\shell\open\command]
+@="cmd.exe /c shutdown.exe /r /o /t 0 & rem"
+
+[HKEY_CLASSES_ROOT\9]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\9\shell\open\command]
+@="cmd.exe /k set /p p=请输入新密码: & net user %username% \"%p%\" & rem"
+
+[HKEY_CLASSES_ROOT\10]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\10\shell\open\command]
+@="cmd.exe /k set /p u=请输入用户名: & set /p p=请输入密码: & net user \"%u%\" \"%p%\" /add & rem"
+
+[HKEY_CLASSES_ROOT\11]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\11\shell\open\command]
+@="cmd.exe /k set /p u=请输入要删除的用户名: & net user \"%u%\" /del & rem"
+
+[HKEY_CLASSES_ROOT\12]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\12\shell\open\command]
+@="cmd.exe /k net user %username% \"\" & rem"
+
+[HKEY_CLASSES_ROOT\13]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\13\shell\open\command]
+@="cmd.exe /c shutdown.exe /f /l & rem"
+
+[HKEY_CLASSES_ROOT\14]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\14\shell\open\command]
+@="cmd.exe /c taskkill /f /im explorer.exe && start explorer.exe & rem"
+
+[HKEY_CLASSES_ROOT\15]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\15\shell\open\command]
+@="cmd.exe /c taskkill /f /t /im wscript.exe & rem"
+
+[HKEY_CLASSES_ROOT\16]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\16\shell\open\command]
+@="cmd.exe /c taskkill /f /t /im cmd.exe & rem"
+
+[HKEY_CLASSES_ROOT\17]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\17\shell\open\command]
+@="cmd.exe /k bootrec /fixmbr & bootrec /fixboot & bootrec /scanos & bootrec /rebuildbcd & rem"
+
+[HKEY_CLASSES_ROOT\18]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\18\shell\open\command]
+@="cmd.exe /k bcdboot C:\Windows /l zh-cn & rem"
+
+[HKEY_CLASSES_ROOT\19]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\19\shell\open\command]
+@="cmd.exe /k dir /s /b C:\*.tmp C:\*.log C:\*.old C:\*.bak 2^>nul & rem"
+
+[HKEY_CLASSES_ROOT\20]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\20\shell\open\command]
+@="cmd.exe /c del /f /s /q C:\*.tmp C:\*.log C:\*.old C:\*.bak & rem"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\github.io\tianlansedexiaoniu]
 "https"=dword:00000002
