@@ -2,12 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>debug</title>
+<title>Debug</title>
 <link rel="icon" href="../img/hyx.ico" type="image/x-icon">
 <link rel="stylesheet" href="../css/close.css">
-<script>
-var da = "";
-</script>
 </head>
 <body>
 <table align="right">
@@ -18,10 +15,11 @@ var da = "";
 <div style="text-align:center"><font size=7>Debug</font></div>
 <table>
 <tr>
-<td><input id="da"></td>
-<td><button>da</button></td>
+<td><font size=4>请输入命令</font></td>
+<td><input type="text" id="u"></td>
+<td><button onclick="dl()">确定</button></td>
 </tr>
+<script>function dl(){let u=document.getElementById('u').value.trim();open(u.includes('://')?u:'https://'+u,'_blank');}</script>
 </table>
 </body>
 </html>
-

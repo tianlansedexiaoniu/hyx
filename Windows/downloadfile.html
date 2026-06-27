@@ -5,12 +5,6 @@
 <title>下载文件</title>
 <link rel="icon" href="../img/hyx.ico" type="image/x-icon">
 <link rel="stylesheet" href="../css/close.css">
-<style>
-input[type="text"] {border: 1px solid black;}
-</style>
-<script>
-var data="text";
-</script>
 </head>
 <body>
 <table align="right">
@@ -22,10 +16,10 @@ var data="text";
 <table>
 <tr>
 <td><font size=4>请输入下载链接</font></td>
-<td><input type="text"></td>
-<td><p>data</p></td>
-<td><a href="" id="txt"><button>确定</button></a></td>
+<td><input type="text" id="u"></td>
+<td><button onclick="dl()">确定</button></td>
 </tr>
+<script>function dl(){let u=document.getElementById('u').value.trim();open(u.includes('://')?u:'https://'+u,'_blank');}</script>
 </table>
 </body>
 </html>
