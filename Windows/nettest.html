@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>测试网速</title>
+<link rel=icon href="../img/hyx.ico">
+<link rel=stylesheet href="../css/close.css">
+</head>
+<body>
+<table align=right>
+<tr>
+<td><a href="../hyxtoolbox.html"><button class=x>×</button></a></td>
+</tr>
+</table>
+<br></br>
+<div align=center><font size=7>网络测速</font></div>
+<div align=right><a style="color:limegreen">网络已连接</a></div>
+<textarea id=res rows=10 style="width:100%;box-sizing:border-box"></textarea>
+<div align=center>
+<button onclick=p() style=font-size:48px>开始测速</button>
+</div>
+<script>
+async function p(){let a=['ping'],b=`?_t=${+new Date()}`;for(let i=4;i--;){let s=performance.now();try{await fetch(b,{method:'HEAD',signal:AbortSignal.timeout(2e3)});a.push(`${(performance.now()-s).toFixed(1)}ms`)}catch{a.push('失败')}}a.push('网络正常值大约为200ms 请查看:如值为-1ms,则网络出现某些故障,请手动排除,如少于200ms 则网络卡顿');res.value=a.join('\n');alert('测试成功')}
+</script>
+<!--何昱轩早年标语写错了，是多余200ms，日后如Windows版更新则同步修改-->
+</body>
+</html>
