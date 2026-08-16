@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>命令提示符</title>
+<link rel="icon" href="../img/hyx.ico" type="image/x-icon">
+<link rel="stylesheet" href="../css/close.css">
+<script src="../css/webusb.js"></script>
+<script>
+let d,t,o=i=>document.getElementById(i),D=new TextDecoder;
+function out(s){let e=o('output');e.textContent+=s;e.scrollTop=e.scrollHeight}
+function clr(){o('output').textContent=""}
+function st(c){o('c').disabled=c;o('x').disabled=!c;o('e').disabled=!c}
+async function con(){try{t=await Adb.open("WebUSB");d=await t.connectAdb("host::webusb",()=>{});st(1)}catch(e){}}
+function dis(){try{t.close()}catch(e){}t=d=null;st()}
+async function exe(){let c=o('u').value.trim();if(!c)return;out("> "+c+"\n");try{let s=await d.shell(c),p="";while(1){let r=await s.receive();if(r.cmd=="CLSE")break;if(r.cmd=="WRTE"){if(r.data)p+=D.decode(r.data);await s.send("OKAY")}}out(p+"\n")}catch(e){}o('u').value=""}
+</script>
+</head>
+<body>
+<table align="right"><tr><td><a href="androidhelper.html"><button class="x">×</button></a></td></tr></table>
+<div style="text-align:center"><font size=7>命令提示符</font></div>
+<table align="center"><tr>
+<td><button id="c" onclick="con()">连接</button></td>
+<td><button id="x" onclick="dis()" disabled>断开</button></td>
+<td><button onclick="clr()">清屏</button></td>
+</tr></table>
+<br>
+<table align="center"><tr>
+<td><font size=4>请输入命令</font></td>
+<td><input type="text" id="u" style="width:180px" onkeydown="event.key=='Enter'&&exe()"></td>
+<td><button id="e" onclick="exe()" disabled>执行</button></td>
+</tr></table>
+<pre id="output"></pre>
+</body>
+</html>

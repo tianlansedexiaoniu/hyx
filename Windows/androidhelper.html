@@ -5,10 +5,9 @@
 <title>安卓手机助手</title>
 <link rel="icon" href="../img/hyx.ico" type="image/x-icon">
 <link rel="stylesheet" href="../css/close.css">
+<script src="../css/webusb.js"></script>
 <script>
-function but1() {
-    alert("要使此程序正确识别到设备,请先打开adb调试\n打开方法:进入设置>关于手机>点击版本号7次>后进入开发者模式勾选USB调试选项(部分手机可能不适用)");
-}
+let _a=null;async function adb(){if(_a)return _a;const t=await Adb.open("WebUSB");_a=await t.connectAdb("host::webusb",()=>alert("请在手机上允许USB调试"));return _a}function but1(){alert("要使此程序正确识别到设备,请先打开adb调试\n打开方法:进入设置>关于手机>点击版本号7次>后进入开发者模式勾选USB调试选项(部分手机可能不适用)")}async function run(t){const d=await adb();if(t==="poweroff")await d.shell("reboot -p");else await d.reboot(t==="reboot"?"":t)}async function installApk(b){const d=await adb(),p=`/data/local/tmp/_${Date.now()}.apk`,s=await d.sync();await s.push(b,p,0o644);await s.quit();await d.shell(`pm install -r ${p}; rm -f ${p}`)}function installLocalApk(){const i=Object.assign(document.createElement("input"),{type:"file",accept:".apk"});i.onchange=async()=>{try{await installApk(i.files[0]);alert("安装完成！")}catch(e){alert("安装失败："+e.message)}};i.click()}async function installToolboxApk(){const r=await fetch("../download/何昱轩安卓系统工具箱beta.apk");await installApk(await r.blob())}
 </script>
 </head>
 <body>
@@ -22,37 +21,43 @@ function but1() {
 <table align="right">
 <tr>
 <td><p>重启到安卓系统</p></td>
-<td><a href=""><button style="border:none;height:32px;width:32px;background: url(../icon/23.png)"></button></a></td>
+<td><a><button onclick="run('reboot')" style="border:none;height:32px;width:32px;background: url(../icon/23.png)"></button></a></td>
 </tr>
 </table>
 <table>
 <tr>
 <td><p>安装安卓版何昱轩系统工具箱</p></td>
-<td><a href="../download/何昱轩安卓系统工具箱beta.apk"><button style="border:none;height:32px;width:32px;background: url(../icon/43.png)"></button></a></td>
+<td><a><button onclick="installToolboxApk()" style="border:none;height:32px;width:32px;background: url(../img/hyxtoolboxphone.png)0/32px 32px"></button></a></td>
 </tr>
 </table>
 <table align="right">
 <tr>
 <td><p>关机手机</p></td>
-<td><a href=""><button style="border:none;height:32px;width:32px;background: url(../icon/4.png)"></button></a></td>
+<td><a><button onclick="run('poweroff')" style="border:none;height:32px;width:32px;background: url(../icon/4.png)"></button></a></td>
 </tr>
 </table>
 <table>
 <tr>
 <td><p>重启到recovery模式</p></td>
-<td><a href=""><button style="border:none;height:64px;width:32px;background: url(../icon/56.png)"></button></a></td>
+<td><a><button onclick="run('recovery')" style="border:none;height:64px;width:32px;background: url(../icon/56.png)"></button></a></td>
+</tr>
+</table>
+<table align="right">
+<tr>
+<td><p>命令提示符</p></td>
+<td><a href="command.html"><button style="border:none;height:32px;width:32px;background: url(../icon/5.png)"></button></a></td>
 </tr>
 </table>
 <table>
 <tr>
 <td><p>重启到Fastboot模式</p></td>
-<td><a href=""><button style="border:none;height:64px;width:32px;background: url(../icon/57.png)"></button></a></td>
+<td><a><button onclick="run('bootloader')" style="border:none;height:64px;width:32px;background: url(../icon/57.png)"></button></a></td>
 </tr>
 </table>
-<table>
+<table align="right">
 <tr>
 <td><p>安装软件</p></td>
-<td><a href=""><button style="border:none;height:32px;width:32px;background: url(../icon/58.png)"></button></a></td>
+<td><a><button onclick="installLocalApk()" style="border:none;height:32px;width:32px;background: url(../icon/58.png)"></button></a></td>
 </tr>
 </table>
 <table>

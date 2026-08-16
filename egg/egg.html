@@ -2,48 +2,51 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>何昱轩个人站</title>
 <link rel="icon" href="../img/hyx.ico" type="image/x-icon">
 <link rel="stylesheet" href="../css/background.css">
 <style>
-body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.4) 4px,transparent 4px,transparent 8px);pointer-events:none;z-index:9999;animation:flicker .15s infinite;}
+body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.4) 4px,transparent 4px,transparent 8px);pointer-events:none;z-index:9999;animation:flicker .15s infinite}
 @keyframes flicker{0%{opacity:.97}50%{opacity:1}100%{opacity:.98}}
-img{border:6px solid #40A0A8}
+img{border:6px solid #40A0A8;max-width:100%;height:auto;box-sizing:border-box}
+table{table-layout:fixed;width:100%}
+table td{padding:4px;text-align:center}
+table td img{display:block;width:100%;height:auto;object-fit:contain}
+.header{display:flex;justify-content:center;align-items:center}
+.header h1{color:#46A3FF;font-size:50px;margin:0}
+.quote{color:#40A0A8;text-decoration:none}
 #footer,#text{position:fixed;left:0;width:100%;text-align:center;margin:0}
 #footer{bottom:20px;font-size:50px;color:white}
 </style>
 </head>
 <body>
 <a href="../index.html"><button class="b"><font size=6 color=white>主页</font></button></a>
-<a href="../download.html"><button class="b"><font size=6 color=white>下载</font></button></a>
-<a href="../about.html"><button class="b"><font size=6 color=white>介绍</font></button></a>
-<table align="center">
-<tr>
-<td><h1 style="color:#46A3FF;font-size:50px">何昱轩科技有限公司</h1></td>
-<td><img src="../img/hyx.ico" width="64" height="64"></td>
-</tr>
-</table>
-<h1 align="center"><a href="../index.html" style="color:#40A0A8;text-decoration:none">后人哀之而不鉴之，亦使后人而复哀后人也。</a></h1>
+<a href="../project.html"><button class="b"><font size=6 color=white>项目</font></button></a>
+<div class="header">
+<h1>何昱轩科技有限公司</h1>
+<img src="../img/hyx.ico" width="64" height="64">
+</div>
+<h1 align="center"><a href="../index.html" class="quote">后人哀之而不鉴之，亦使后人而复哀后人也。</a></h1>
 <table width="100%" cellpadding="0" cellspacing="0">
 <tr>
-<td align="left"><img src="iPadPro9.7.jpg" width="250" height="190"></td>
-<td align="center"><img src="newasus.jpg" width="250" height="190"></td>
-<td align="right"><img src="dellxps9380.jpg" width="250" height="190"></td>
+<td align="left"><img src="iPadPro9.7.jpg"></td>
+<td align="center"><img src="newasus.jpg"></td>
+<td align="right"><img src="dellxps9380.jpg"></td>
 </tr>
 <tr>
-<td align="left"><img src="Asusold.jpg" width="250" height="190"></td>
-<td align="center"><img src="xunfeit10.jpg" width="250" height="190"></td>
-<td align="right"><img src="xiaoailaoshi.jpg" width="250" height="190"></td>
+<td align="left"><img src="Asusold.jpg"></td>
+<td align="center"><img src="xunfeit10.jpg"></td>
+<td align="right"><img src="xiaoailaoshi.jpg"></td>
 </tr>
 <tr>
-<td align="left"><img src="mimax2.jpg" width="250" height="190"></td>
-<td align="center"><img src="thinkpad.jpg" width="250" height="190"></td>
-<td align="right"><img src="madpaper.jpg" width="250" height="190"></td>
+<td align="left"><img src="mimax2.jpg"></td>
+<td align="center"><img src="thinkpad.jpg"></td>
+<td align="right"><img src="madpaper.jpg"></td>
 </tr>
 <tr>
-<td align="left"><img src="mi15.jpg" width="250" height="190"></td>
-<td align="center"><img src="cdwatch.jpg" width="250" height="190"></td>
-<td align="right"></td>
+<td align="left"><img src="mi15.jpg"></td>
+<td align="center"><img src="cdwatch.jpg"></td>
 </tr>
 </table>
 <h1 id="footer">感谢你们的奉献与牺牲</h1>
