@@ -6,9 +6,8 @@ set d=if "%c%"=="
 set e=键入
 set f=打开
 set g=shutdown
-set l=cmd /c 
-set m=title 
-
+set l=cmd /c
+set m=title
 :1
 color 4F
 %m%%h%
@@ -43,11 +42,12 @@ echo %e%"c"查看系统硬件配置
 echo %e%"d"修复系统
 echo %e%"e"%f%默认浏览器
 echo %e%"f"%f%设置
-echo %e%"g"硬盘文件备份
+echo %e%"g"%f%硬盘文件备份
 echo %e%"h"激活windows
 echo %e%"i"测试网速
 echo %e%"j"进行高级账号设置
 echo %e%"k"%f%手电筒
+echo %e%"l"安卓手机助手
 %b%请选择功能 :
 if "%c%"=="" goto:2
 if "%c%"=="0" goto:a
@@ -61,9 +61,9 @@ if "%c%"=="7" goto:c
 if "%c%"=="8" compmgmt.msc
 if "%c%"=="9" goto:d
 if "%c%"=="a" goto:e
-if "%c%"=="b" time/t&%b%
+if "%c%"=="b" time/t&echo.&pause&goto:2
 if "%c%"=="c" dxdiag
-if "%c%"=="d" cmd/c %m%修复系统中,请耐心等待&cls&sfc/scannow&Dism/Online/Cleanup-Image/CheckHealth&dism/Online/Cleanup-image/RestoreHealth
+if "%c%"=="d" cmd/c %m%修复系统中,请耐心等待&cls&sfc/scannow&Dism/Online/Cleanup-Image/CheckHealth&dism/Online/Cleanup-Image/RestoreHealth
 if "%c%"=="e" start http://www.baidu.com
 if "%c%"=="f" start ms-settings:wheel
 if "%c%"=="g" goto:f
@@ -71,12 +71,13 @@ if "%c%"=="h" goto:g
 if "%c%"=="i" %m%测试网速&cls&ping 8.8.8.8&echo 网络正常值大约为100ms 请查看:如请求超时,则网络出现某些故障,请手动排除 如超过100ms 则网络卡顿&pause&goto:2
 if "%c%"=="j" goto:h
 if "%c%"=="k" goto:i
+if "%c%"=="l" goto:l
 goto:2
 :a
 cls
 %m%关于界面
 cls
-echo 此软件版本号 :3.8.0
+echo 此软件版本号 :4.0.0
 echo %h% 2021-2023
 echo hyx win help HWH
 %b%
@@ -192,9 +193,9 @@ if "%c%"=="0" goto:2
 if "%c%"=="1" echo %k%07797-OEM-0020174-80465&%b%
 if "%c%"=="2" echo %k%XDFJK-9GP3J-K4T7K-7GMDQ-HWDPG&%b%
 if "%c%"=="3" echo %k%MRX3F-47B9T-2487J-KWKMF-RPWBY&%b%
-if "%c%"=="4" cmd/c slmgr/ipk 7jg-NPHTm-C97Jm-9mPgT-3V66T&slmgr/skms kms.xspace.in&slmgr/ato
-if "%c%"=="5" cmd/c slmgr/ipk KVN8D-W32H3-V4T64-TG9T2-3YH3B&slmgr/skms kms.xspace.in&slmgr/ato
-if "%c%"=="6" cmd/c slmgr/ipk VK7JG-NPHTM-C97JM-9MPGT-3V66T&slmgr/skms kms.xspace.in&slmgr/ato
+if "%c%"=="4" cmd/c slmgr/ipk 7jg-NPHTm-C97Jm-9mPgT-3V66T&slmgr/skms kms.xspace.in&slmgr /ato
+if "%c%"=="5" cmd/c slmgr/ipk KVN8D-W32H3-V4T64-TG9T2-3YH3B&slmgr/skms kms.xspace.in&slmgr /ato
+if "%c%"=="6" cmd/c slmgr/ipk VK7JG-NPHTM-C97JM-9MPGT-3V66T&slmgr/skms kms.xspace.in&slmgr /ato
 goto:g
 :h
 %m%高级账号设置
@@ -207,7 +208,38 @@ echo %e%"4"注销
 %b%请选择功能 :
 if "%c%"=="0" goto:2
 if "%c%"=="1" %m%修改密码&cls&echo 当前用户列表&net user&set/P ct=请键入密码(空密码请输入空格):&net user %username% "%ct%"&cls&echo 修改完毕&goto:h
-if "%c%"=="2" %m%新建账号&cls&echo 当前用户列表&net user&set/P us=请键入用户名:&set/P ct=请键入密码(空密码请输入空格):&echo net user %us% "%ct%" /add&pause&cls&echo 新建完毕&goto:h
+if "%c%"=="2" %m%新建账号&cls&echo 当前用户列表&net user&set/P us=请键入用户名:&set/P ct=请键入密码(空密码请输入空格):&net user %us% "%ct%" /add&pause&cls&echo 新建完毕&goto:h
 if "%c%"=="3" %m%删除账号&cls&echo 当前用户列表&net user&set/P ne=请键入用户名:&net user %ne% /del &pause&cls&echo 删除完毕&goto:h
 if "%c%"=="4" %g% /f /l
 goto:h
+:i
+%m%手电筒
+color 07
+cls
+%b% 　　　　　o开 t关 e退出
+  if "%c%"=="o" color F7
+  if "%c%"=="t" color 07
+  if "%c%"=="e" goto:2
+%b%
+goto:i
+goto:2
+:l
+cls
+echo 以下功能需在安装adb组件后使用
+echo %e%"0"退出菜单
+echo %e%"1"安装何昱轩系统工具箱安卓版
+echo %e%"2"安装apk
+echo %e%"3"卸载apk
+echo %e%"4"冻结apk
+echo %e%"5"解冻apk
+echo %e%"6"启用apk
+echo %e%"7"禁用apk
+%b%请选择功能 :
+if "%c%"=="0" goto:2
+if "%c%"=="2" set /p a=输入APK路径:&adb install -r "%a%"&pause
+if "%c%"=="3" set /p b=输入应用包名:&adb uninstall %b%&pause
+if "%c%"=="4" set /p b=输入应用包名:&adb shell pm disable-user %b%&pause
+if "%c%"=="5" set /p b=输入应用包名:&adb shell pm enable %b%&pause
+if "%c%"=="6" set /p b=输入应用包名:&adb shell pm enable %b%&pause
+if "%c%"=="7" set /p b=输入应用包名:&adb shell pm disable-user %b%&pause
+goto:l
