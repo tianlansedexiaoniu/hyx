@@ -14,7 +14,7 @@
 <div align="center"><font color="red">提示：一次只可传输一个文件</font></div>
 <div align="center">
 <input type="file" id="p" style="display:none" onchange="onPushFile(this)">
-<input type="text" id="a" readonly placeholder="请将需要传输的文件拖入此编辑框" onclick="document.getElementById('p').click()" style="width:100%;max-width:460px;height:100px;">
+<input type="text" id="a" readonly placeholder="请将需要传输的文件拖入此编辑框" onclick="$('p').click()" style="width:100%;max-width:460px;height:100px;">
 <input id="b" placeholder="请输入手机目标路径" style="width:100%;max-width:460px;height:100px;">
 <button onclick="doPush()" style="width:230px;height:40px;font-size:30px;">确定</button>
 </div>
@@ -27,6 +27,6 @@
 <button onclick="doPull()" style="width:230px;height:40px;font-size:30px;">确定</button>
 </div>
 <div align="center"><font color="red">提示：建议在手机上开启mtp模式进行文件传输，不建议在此程序上传输文件</font></div>
-<script>const $=id=>document.getElementById(id);function onPushFile(i){i.files&&i.files[0]&&($("a").value=i.files[0].name)}async function getAdb(){let t=await Adb.open("WebUSB"),d=await t.connectAdb("host::webusb");return{t,d}}async function doPull(){let p=$("d").value.trim();if(!p)return;let{t,d}=await getAdb(),s=await d.sync(),e=await s.pull(p);await s.quit();t.close();let b=new Blob([new Uint8Array(e.buffer)],{type:"application/octet-stream"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=p.split("/").pop();a.click();URL.revokeObjectURL(a.href)}async function doPush(){let f=$("p").files[0],p=$("b").value.trim();if(!f||!p)return;let{t,d}=await getAdb(),s=await d.sync();await s.push(f,p,0o644);await s.quit();t.close()}</script>
+<script>const $=e=>document.getElementById(e);async function g(){let t=await Adb.open("WebUSB"),d=await t.connectAdb("host::webusb");return{t,d}}function onPushFile(e){e.files[0]&&($("a").value=e.files[0].name)}async function doPush(){let f=$("p").files[0],p=$("b").value.trim();if(!f||!p)return;let{t,d}=await g(),s=await d.sync();await s.push(f,p,0o644);await s.quit();t.close()}async function doPull(){let p=$("d").value.trim();if(!p)return;let{t,d}=await g(),s=await d.sync(),e=await s.pull(p);await s.quit();t.close();let n=$("c").value.trim().split(/[\\/]/).pop()||p.split("/").pop(),b=new Blob([new Uint8Array(e.buffer,e.byteOffset,e.byteLength)],{type:"application/octet-stream"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=n;a.click();URL.revokeObjectURL(a.href)}</script>
 </body>
 </html>
