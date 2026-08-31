@@ -6,21 +6,7 @@
 <link rel="icon" href="img/hyx.ico" type="image/x-icon">
 <link rel="stylesheet" href="css/close.css">
 <script>
-function time(){
-var date=new Date();
-var year=date.getFullYear();
-var month=date.getMonth()+1;
-var day=date.getDate();
-var hour=date.getHours();
-hour=hour<10?"0"+hour:hour;
-var minute=date.getMinutes();
-minute=minute<10?"0"+minute:minute;
-var second=date.getSeconds();
-second=second<10?"0"+second:second;
-var currentTime=year+"-"+month+"-"+day+"  "+hour+":"+minute+":"+second;
-document.getElementById("time").innerHTML=currentTime;
-}
-setInterval(time,1000);
+const fmt=new Intl.DateTimeFormat(0,{dateStyle:"full",timeStyle:"medium"});setInterval(()=>document.getElementById("time").innerHTML=fmt.format(new Date()),1e3);
 function but4(){
 alert("当前已是最新版本");
 }
@@ -80,7 +66,7 @@ time();
 <table>
 <tr>
 <td><p>关于</p></td>
-<td><button onclick="but2()" style="border:none;height:32px;width:32px;background:url(icon/1.png)"></button></td>
+<td><button onclick="but2()" style="border:none;height:32px;width:32px;background:url(icon/1.png)"></button></a></td>
 </tr>
 </table>
 <table align="right">
